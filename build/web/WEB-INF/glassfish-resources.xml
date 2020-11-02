@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource   Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+  <jdbc-connection-pool name="java:app/productConnectionPool" res-type="javax.sql.ConnectionPoolDataSource"
+   datasource-classname="com.mysql.cj.jdbc.MysqlDataSource">
+    <property name="ServerName" value="localhost"/>
+    <property name="Port" value="3306"/>
+    <property name="DatabaseName" value="productdb"/>
+    <property name="User" value="root" />
+    <property name="Password" value="Tranquangha123@@"/>
+    <property name="Url" value="jdbc:mysql://localhost:3306/productdb?autoReconnect=true"/>
+<!--    <property name = useSSL value = "false"/>
+    <property name = "characterEncoding" value="UTF-8"/>
+    <property name = "serverTimezone" value = "UTC" />
+    <property name = "ZeroDateTimeBehavior" value = "CONVERT_TO_NUL" />
+    <property name = "setZeroDateTimeBehavior" value = "CONVERT_TO_NUL" />
+    <property name = "useInformationSchema" value = "true" />
+    <property name = "nullCatalogMeansCurrent" value="true" />
+-->    <property name = "SslMode" value="DISABLED" /><!--
+    <property name = "allowPublicKeyRetrieval" value = "true"/>
+    <property name = "nullNamePatternMatchesAll" value= "false"/>-->
+    <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+</jdbc-connection-pool>
+<jdbc-resource enabled="true" jndi-name="java:app/jdbc/productdb" object-type="user" 
+pool-name="java:app/productConnectionPool"/>
+</resources>
+
